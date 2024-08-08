@@ -1,0 +1,33 @@
+<h1>Trivia of 10 questions</h1>
+
+<div>
+    <span>Category:</span>
+    <select [(ngModel)]="category">
+        <option *ngFor="let item of categories" [value]="item.value">{{item.text}}</option>
+    </select>
+    
+    <span>Difficulty:</span>
+    <select [(ngModel)]="difficulty">
+        <option *ngFor="let item of difficulties" [value]="item.value">{{item.text}}</option>
+    </select>
+
+    <button (click)="getQuestions()">Get Questions</button>
+</div>
+
+<div *ngIf="questions">
+        <div *ngFor="let quest of questions">
+            <p [innerHTML]="quest.question" id="q{{quest.question_id}}"></p>
+            <div *ngFor="let answer of quest.random_order_answers"> 
+                <input
+                    type="radio"
+                    name="{{quest.question_id}}"
+                    value="{{answer}}"
+                    [(ngModel)]="quest.chosen_answer">
+                <label [innerHTML]="answer"></label>
+            </div>
+        </div>
+</div>
+
+<p>
+    <button (click)="validateAnswers()">Validate</button>
+</p>

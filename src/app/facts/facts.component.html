@@ -1,0 +1,9 @@
+<h1>Useless facts!</h1>
+<h3>Fact: {{factText}}</h3>
+<input [ngModel]="name" />
+<p></p>
+<select [(ngModel)]="lang" >
+    <option value="en">English</option>
+    <option value="de">German</option>
+</select>
+<button (click)="getRandomFact()">Get random fact</button>

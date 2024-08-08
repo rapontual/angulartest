@@ -1,0 +1,19 @@
+<h1>Dictonary!</h1>
+
+<div>
+    <label>Word: </label>
+    <input [(ngModel)]="word" />
+    <button (click)="searchWord()">Search</button>
+</div>
+
+<div>
+    <div class="card" *ngFor="let meaning of meanings">
+        <p class="card-title">{{meaning.partOfSpeech}}</p>
+        <ul>
+            <li *ngFor="let definition of meaning.definitions">
+                {{definition.definition}}
+                <p *ngIf="definition.example" style="font-style: italic; margin: 0 0 2px 12px">Ex: {{definition.example}}</p>
+            </li>
+        </ul>
+    </div>
+</div>

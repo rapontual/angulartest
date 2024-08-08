@@ -1,0 +1,53 @@
+<h1>Free games catalog!</h1>
+
+<!-- <select  name="selectedSpl" [(ngModel)]="platform">
+    <option *ngFor="let item of platforms" [value]="item">{{item}}</option>
+</select> -->
+
+<mat-form-field>
+    <mat-label>Plataform:</mat-label>
+    <mat-select [(ngModel)]="platform">
+        <mat-option [value]="item" *ngFor="let item of platforms">{{item}}</mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Category:</mat-label>
+    <mat-select [(ngModel)]="category">
+        <mat-option [value]="item" *ngFor="let item of categories">{{item}}</mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>Sort by:</mat-label>
+    <mat-select [(ngModel)]="sortyBy">
+        <mat-option [value]="item" *ngFor="let item of sortByCriteria">{{item}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<button mat-raised-button (click)="searchGames()">Search</button>
+
+<div >
+    <mat-card class="example-card" appearance="outlined" *ngFor="let game of games" style="margin: 5px;">
+      <mat-card-header>
+        <mat-card-title>{{game.title}}</mat-card-title>
+        <mat-card-subtitle>{{game.publisher}}</mat-card-subtitle>
+        <mat-card-subtitle>{{game.release_date | formatStringDate }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{game.thumbnail}}" alt="{{game.title}}">
+      <mat-card-content>
+        <p>
+          {{game.short_description}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a href="{{game.game_url}}" target="_blank" mat-button>VISIT</a>
+        <!-- <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button> -->
+      </mat-card-actions>
+      <mat-card-footer class="example-card-footer" style="padding: 2px 10px">
+        <mat-chip-set>
+          <mat-chip>{{game.platform}}</mat-chip>
+          <mat-chip>{{game.genre}}</mat-chip>
+        </mat-chip-set>
+      </mat-card-footer>
+    </mat-card>
+</div>
