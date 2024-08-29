@@ -16,7 +16,7 @@ export class HolidaysService {
     return this.httpClient.get<Country[]>(url);
   }
 
-  getHodidays(year: number, countryCode: string) : Observable<Holiday[]> {
+  getHolidays(year: number, countryCode: string) : Observable<Holiday[]> {
     const url = `https://date.nager.at/api/v3/PublicHolidays/${year}/${countryCode}`;
     return this.httpClient.get<Holiday[]>(url);
   }

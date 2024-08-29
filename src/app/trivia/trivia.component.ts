@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TriviaService } from '../services/trivia.service';
 import { SelectOption } from '../models/selectOption';
 import { TriviaQuestion } from '../models/trivia';
@@ -8,16 +8,18 @@ import { TriviaQuestion } from '../models/trivia';
   templateUrl: './trivia.component.html',
   styleUrls: ['./trivia.component.scss']
 })
-export class TriviaComponent {
-  constructor(private triviaService: TriviaService, private elementRef: ElementRef<HTMLElement>) {
-    triviaService.getCategories()
+export class TriviaComponent implements OnInit {
+  constructor(private triviaService: TriviaService) {}
+  
+  ngOnInit(): void {
+    this.triviaService.getCategories()
       .subscribe({
         next: (data) => {
           this.categories = data; 
         }
       });
 
-      triviaService.getDifficulties()
+      this.triviaService.getDifficulties()
       .subscribe({
         next: (data) => {
           this.difficulties = data; 

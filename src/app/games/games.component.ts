@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from '../services/games.service';
-import {MatCardModule} from '@angular/material/card';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { Game } from '../models/game';
-import { FormatStringDatePipe } from '../pipes/format-string-date.pipe';
 
 @Component({
   selector: 'app-games',

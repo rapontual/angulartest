@@ -29,7 +29,7 @@ export class HolidaysComponent implements OnInit {
 
   getHolidays() {
     const year = new Date().getFullYear();
-    this.holidayService.getHodidays(year, this.country)
+    this.holidayService.getHolidays(year, this.country)
       .subscribe({
         next: (data) => {
           this.holidays = data;

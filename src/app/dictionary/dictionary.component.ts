@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { DictionaryModel, Meaning } from '../models/dictionary';
+import { DictionaryService } from '../services/dictionary.service';
 
 @Component({
   selector: 'app-dictionary',
@@ -7,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dictionary.component.scss']
 })
 export class DictionaryComponent {
-   constructor(private http: HttpClient) {}
+   constructor(private dictionaryService: DictionaryService) {}
 
    word = '';
    meanings: Meaning[] = [];
@@ -20,36 +21,11 @@ export class DictionaryComponent {
    };
 
    searchWord() {
-    const url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + this.word;
-
-    this.http
-      .get<DictionaryModel[]>(url)
+    this.dictionaryService.searchWord(this.word)
       .subscribe(data => {
         this.result = data[0];
         this.audioUrl = data[0]?.phonetics[0]?.audio;
         this.meanings = data[0].meanings;
       })
    }
-}
-
-export interface DictionaryModel {
-  word: string
-  phonetic: string
-  phonetics: Phonetic[]
-  meanings: Meaning[]
-}
-
-export interface Phonetic {
-  text: string
-  audio: string
-}
-
-export interface Meaning {
-  partOfSpeech: string
-  definitions: Definition[]
-}
-
-export interface Definition {
-  definition: string
-  example?: string
 }
