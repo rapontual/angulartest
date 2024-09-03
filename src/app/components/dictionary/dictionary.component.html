@@ -2,7 +2,7 @@
 
 <div>
     <label>Word: </label>
-    <input [(ngModel)]="word" />
+    <input [(ngModel)]="word" required="Inform the search term" />
     <button (click)="searchWord()">Search</button>
 </div>
 
@@ -17,3 +17,14 @@
         </ul>
     </div>
 </div>
+
+<ng-template #mydialog style="display: none">
+    <h1>This is a message</h1>
+    
+</ng-template>
+
+<dialog #dialog id="dialog" style="width: 200px; border: solid 1px #444; border-radius: 5px;">
+    <h2 style="margin-top: 0;">Error</h2>
+    <p>Term not found</p>
+    <button (click)="dialog.close()">OK</button>
+</dialog>

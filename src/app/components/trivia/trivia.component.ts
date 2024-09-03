@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TriviaService } from '../services/trivia.service';
-import { SelectOption } from '../models/selectOption';
-import { TriviaQuestion } from '../models/trivia';
+import { TriviaService } from '../../services/trivia.service';
+import { SelectOption } from '../../models/selectOption';
+import { TriviaQuestion } from '../../models/trivia';
 
 @Component({
   selector: 'app-trivia',

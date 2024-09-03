@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TriviaComponent } from './trivia.component';
-import { TriviaService } from '../services/trivia.service';
+import { TriviaService } from '../../services/trivia.service';
 import { of } from 'rxjs';
 import { FormsModule } from '@angular/forms';
-import { TriviaQuestion } from '../models/trivia';
+import { TriviaQuestion } from '../../models/trivia';
 
 // Test using SpyObj + TestBed
 describe('TriviaComponent', () => {

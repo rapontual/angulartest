@@ -31,7 +31,7 @@ describe('HolidaysComponent', () => {
       expect(mockHodidayService.getAvailableCountries).toHaveBeenCalled();
   });
 
-  it('getHolidays should set holidays', fakeAsync(() => {
+  it('getHolidays should set holidays', () => {
     const expectedYear = new Date().getFullYear();
     const country = "FR";
     const response: Holiday[] = [
@@ -52,5 +52,5 @@ describe('HolidaysComponent', () => {
     expect(mockHodidayService.getHolidays).toHaveBeenCalledWith(expectedYear, country);
     expect(component.holidays.length).toBe(1);
     expect(component.holidays[0]).toBe(response[0])
-  }));
+  });
 });

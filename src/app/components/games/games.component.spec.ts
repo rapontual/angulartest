@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { GamesComponent } from './games.component';
-import { GamesService } from '../services/games.service';
+import { GamesService } from '../../services/games.service';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { of } from 'rxjs';
-import { Game } from '../models/game';
+import { Game } from '../../models/game';
 
 describe('GamesComponent', () => {
   let component: GamesComponent;

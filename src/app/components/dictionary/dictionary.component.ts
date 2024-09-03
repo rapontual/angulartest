@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DictionaryModel, Meaning } from '../models/dictionary';
-import { DictionaryService } from '../services/dictionary.service';
+import { DictionaryModel, Meaning } from '../../models/dictionary';
+import { DictionaryService } from '../../services/dictionary.service';
 
 @Component({
   selector: 'app-dictionary',
@@ -12,7 +12,6 @@ export class DictionaryComponent {
 
    word = '';
    meanings: Meaning[] = [];
-   audioUrl = '';
    result: DictionaryModel = {
     word: '',
     phonetic: '',
@@ -24,8 +23,13 @@ export class DictionaryComponent {
     this.dictionaryService.searchWord(this.word)
       .subscribe(data => {
         this.result = data[0];
-        this.audioUrl = data[0]?.phonetics[0]?.audio;
         this.meanings = data[0].meanings;
+      },
+      error => {
+        console.log("Error!" + error);
+        let elem: HTMLDialogElement = document.getElementById("dialog") as HTMLDialogElement;
+        elem.showModal();
+        //this.dialog.open(this.mydialog);
       })
    }
 }

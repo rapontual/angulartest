@@ -1,5 +1,5 @@
 import { FactsComponent } from './facts.component';
-import { FactsService } from '../services/facts.service';
+import { FactsService } from '../../services/facts.service';
 import { of } from 'rxjs';
 
 // Test using SpyObj without TestBed, instantiating the component directly 

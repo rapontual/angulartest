@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { GamesComponent } from './games/games.component';
-import { DictionaryComponent } from './dictionary/dictionary.component';
-import { FactsComponent } from './facts/facts.component';
-import { HolidaysComponent } from './holidays/holidays/holidays.component';
-import { TriviaComponent } from './trivia/trivia.component';
+import { GamesComponent } from './components/games/games.component';
+import { DictionaryComponent } from './components/dictionary/dictionary.component';
+import { FactsComponent } from './components/facts/facts.component';
+import { HolidaysComponent } from './components/holidays/holidays.component';
+import { TriviaComponent } from './components/trivia/trivia.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },

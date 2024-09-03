@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { FactsComponent } from './facts/facts.component';
+import { FactsComponent } from './components/facts/facts.component';
 import { FormsModule } from '@angular/forms';
-import { DictionaryComponent } from './dictionary/dictionary.component';
-import { GamesComponent } from "./games/games.component";
+import { DictionaryComponent } from './components/dictionary/dictionary.component';
+import { GamesComponent } from "./components/games/games.component";
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -19,8 +19,9 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatTableModule} from '@angular/material/table';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormatStringDatePipe } from './pipes/format-string-date.pipe';
-import { HolidaysComponent } from './holidays/holidays/holidays.component';
-import { TriviaComponent } from './trivia/trivia.component';
+import { HolidaysComponent } from './components/holidays/holidays.component';
+import { TriviaComponent } from './components/trivia/trivia.component';
+
 
 @NgModule({
   declarations: [
